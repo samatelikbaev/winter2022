@@ -23,8 +23,10 @@ public class SomeClassTest {
     }
     @DataProvider
     public static Object[][]numbers(){
+        int [] s={1,2,3,4,};
         return new Object[][]{
-                {1,2,3},
+
+                {1,2,s},
                 {3,2,5},
                 {2,2,8},
                 {0,0,0}
