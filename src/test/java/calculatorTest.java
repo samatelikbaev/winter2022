@@ -1,5 +1,6 @@
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.IDataProviderAnnotation;
 import org.testng.annotations.Test;
 
 public class calculatorTest {
@@ -9,6 +10,22 @@ public class calculatorTest {
 //    Assert.assertEquals(calculator.add(3,3),6);
 //    //System.out.println(calculator.add(2, 3));
 //}
+    @Test(dataProvider = "sq")
+    public void square(int [][] m,int n){
+        Assert.assertEquals(calculator.squarePatch(n),m);
+    }
+    @DataProvider
+    public static Object[][]sq(){
+        return new Object[][]{
+                {new int[][] {{3, 3, 3},{3, 3, 3},{3, 3, 3}},3},
+                {new int[][] {{2, 2},  {2, 2} },2},
+                {new int[][] {{4, 4, 4, 4},{4, 4, 4, 4},{4, 4, 4, 4},{4, 4, 4, 4}},4 },
+                {new int[][] {{6, 6, 6, 6, 6, 6},{6, 6, 6, 6, 6, 6},{6, 6, 6, 6, 6, 6},{6, 6, 6, 6, 6, 6},{6, 6, 6, 6, 6, 6},{6, 6, 6, 6, 6, 6}},6},
+                {new int[][] {{5, 5, 5, 5, 5},{5, 5, 5, 5, 5},{5, 5, 5, 5, 5},{5, 5, 5, 5, 5},{5, 5, 5, 5, 5}},5},
+                {new int[][]{{1}},1},
+                {new int[][]{},0}
+        };
+    }
     @Test(dataProvider = "quad")
     public void quadratic(int a, int b, int c, int num){Assert.assertEquals(calculator.solutions(a,b,c),num);}
     @DataProvider
@@ -21,6 +38,22 @@ public class calculatorTest {
                 {200, 420, -800,2},
                 {1000, 1000, 0,2},
                 {10000, 400, 4,1}
+        };
+    }
+    @Test(dataProvider="evenodd")
+    public void evenodd(int[] a, int b){
+        Assert.assertEquals(calculator.warOfNumbers(a),b);
+    }
+    @DataProvider
+    public static Object[][]evenodd(){
+        return new Object[][]{
+                {new int[]{5,9,45,6,2,7,34,8,6,90,5,243},168},
+                {new int[]{654,7,23,3,78,4,56,34},793},
+                {new int[]{1,2,3,4,5,6,7,8,9},5},
+                {new int[]{97,83,209,141,134,298,110,207,229,275,115,64,244,278},228},
+                {new int[]{332,92,35,315,109,168,320,230,63,323,16,204,105,17,226,157,245,44,223,136,93},83},
+                {new int[]{322,89,36,310,297,157,251,55,264,244,200,304,25,308,311,269,303,257,6,311,307,310,50,46,54,237,59,105,267},846},
+                {new int[]{50,100,149,1,200,199,3,2},0}
         };
     }
 

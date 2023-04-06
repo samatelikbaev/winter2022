@@ -16,6 +16,24 @@ public class calculator {
         else if(D == 0) return 1;
         else return 0;
     }
+    public static int warOfNumbers(int[]numbers){
+        int s1=0,s2=0;
+        for (int i=0; i<numbers.length;i++){
+            if(numbers[i]%2==0)s1=s1+numbers[i];
+            if(numbers[i]%2==1)s2=s2+numbers[i];
+        }
+        return Math.abs(s1-s2);
+    }
+    public static int[][] squarePatch(int n) {
+        int[][] m=new int[n][n];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                m[i][j]=n;
+            }
+
+        }
+        return m;
+    }
 
  public static int add(int a, int b){
      return a+b;
