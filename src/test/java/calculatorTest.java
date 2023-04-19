@@ -10,6 +10,30 @@ public class calculatorTest {
 //    Assert.assertEquals(calculator.add(3,3),6);
 //    //System.out.println(calculator.add(2, 3));
 //}
+    @Test(dataProvider = "ss")
+    public void chars(char[][] arr, char c,int d){
+        Assert.assertEquals(calculator.letterCounter(arr, c), d);    }
+    @DataProvider
+    public static Object[][]ss(){
+        return new Object[][]{
+                {new char[][]{{'D', 'E', 'Y', 'H', 'A', 'D'},{'C', 'B', 'Z', 'Y', 'J', 'K'},{'D', 'B', 'C', 'A', 'M', 'N'},
+                        {'F', 'G', 'G', 'R', 'S', 'R'},     {'V', 'X', 'H', 'A', 'S', 'S'} }, 'H',2},
+                {new char[][] {{'D', 'E', 'Y', 'H', 'A', 'D'},{'C', 'B', 'Z', 'Y', 'J', 'K'},{'D', 'B', 'C', 'A', 'M', 'N'},
+                        {'F', 'G', 'G', 'R', 'S', 'R'},     {'V', 'X', 'H', 'A', 'S', 'S'} }, 'D',3},
+                {new char[][] {{'D', 'E', 'Y', 'H', 'A', 'D'},{'C', 'B', 'Z', 'Y', 'J', 'K'},{'D', 'B', 'C', 'A', 'M', 'N'},
+                        {'F', 'G', 'G', 'R', 'S', 'R'},     {'V', 'X', 'H', 'A', 'S', 'S'} }, 'Z',1},
+                {new char[][]{{'D', 'E', 'Y', 'H', 'A', 'D'},{'C', 'B', 'Z', 'Y', 'J', 'K'},{'D', 'B', 'C', 'A', 'M', 'N'},
+                        {'F', 'G', 'G', 'R', 'S', 'R'},     {'V', 'X', 'H', 'A', 'S', 'S'} }, 'R',2},
+                {new char[][]{{'D', 'E', 'Y', 'H', 'A', 'D'},{'C', 'B', 'Z', 'Y', 'J', 'K'},{'D', 'B', 'C', 'A', 'M', 'N'},
+                        {'F', 'G', 'G', 'R', 'S', 'R'},     {'V', 'X', 'H', 'A', 'S', 'S'} }, 'X',1},
+                {new char[][] {{'D', 'E', 'Y', 'H', 'A', 'D'},{'C', 'B', 'Z', 'Y', 'J', 'K'},{'D', 'B', 'C', 'A', 'M', 'N'},
+                        {'F', 'G', 'G', 'R', 'S', 'R'},     {'V', 'X', 'H', 'A', 'S', 'S'} }, 'S',3},
+                {new char[][] {{'D', 'E', 'Y', 'H', 'A', 'D'},{'C', 'B', 'Z', 'Y', 'J', 'K'},{'D', 'B', 'C', 'A', 'M', 'N'},
+                        {'F', 'G', 'G', 'R', 'S', 'R'},     {'V', 'X', 'H', 'A', 'S', 'S'} }, 'H',2},
+
+
+        };
+    }
     @Test(dataProvider = "sq")
     public void square(int [][] m,int n){
         Assert.assertEquals(calculator.squarePatch(n),m);

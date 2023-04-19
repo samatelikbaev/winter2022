@@ -1,6 +1,17 @@
 public class calculator {
     public static void main(String[] args) {
+        String a="7";
+        int b=Integer.valueOf(a);
 
+    }
+    public static int letterCounter(char[][] arr, char c) {
+        int d=0;
+        for (int i=0; i<arr.length; i++){
+            for (int j=0; j<arr[0].length; j++){
+                if(arr[i][j]==c){d++;}
+            }
+        }
+        return d;
     }
 
         public static int[] arrayOfMultiples(int num, int length) {
