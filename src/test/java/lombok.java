@@ -10,6 +10,10 @@ import lombok.*;
 public class lombok {
     private String name;
     private int age;
+
+    public lombok(String john, int i) {
+    }
+
     public void sayhi(){
         System.out.println("hello "+name);
     }

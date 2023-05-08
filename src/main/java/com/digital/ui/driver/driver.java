@@ -20,6 +20,7 @@ public class driver {
                     driver = EdgeWebDriver.loadEdgeDriver();
                     break;
 
+
             }
         }
         return driver;
