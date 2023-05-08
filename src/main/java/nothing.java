@@ -1,5 +1,6 @@
 public class nothing {
     public static void main(String[] args) {
-        int a;
+
+        String a;
     }
 }
